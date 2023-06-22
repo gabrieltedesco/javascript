@@ -20,8 +20,8 @@ class Jogo(object):
         self.canvas = Canvas(self.frame, bg='black', width=canvas_l, height=canvas_a, cursor='')
         self.canvas.pack()
         #Criando um botão
-        self.startBot = Button(self.root, text='START', command=self.Jogar)
-        self.startBot.pack()
+        self.startbot = Button(self.root, text='START', command=self.Jogar)
+        self.startbot.pack()
         self.novoJogo()
 
         self.root.mainloop()
@@ -33,12 +33,12 @@ class Jogo(object):
         #Criando os retângulos
         self.retangulos = []
         linhas, colunas, espaco = 5, 8, 2
-        base, altura, posicao_0 = 48, 20, 50
+        base, altura_0, posicao_0 = 48, 20, 50
         for i in range(linhas):
             cor = random.choice(['green', 'orange', 'blue', 'red', 'white', 'yellow', 'purple', 'lightgreen'])
             for j in range(colunas):
-                r = self.canvas.create_rectangle((base*j + espaco*(j+1), altura*i + espaco*(i+1) + posicao_0),
-                                             (base*j + espaco*(j+1) + base, altura*i + espaco*(i+1) + posicao_0 + altura),
+                r = self.canvas.create_rectangle((base*j + espaco*(j+1), altura_0*i + espaco*(i+1) + posicao_0),
+                                             (base*j + espaco*(j+1) + base, altura_0*i + espaco*(i+1) + posicao_0 + altura_0),
                                              fill=cor)
                 self.retangulos.append(r)
 
@@ -86,4 +86,3 @@ class Jogo(object):
                     return
 
 Jogo()
-print('RODOU O JOGO')
