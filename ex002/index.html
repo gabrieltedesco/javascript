@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If/else</title>
+</head>
+<body>
+    <label for="ivel">Velocidade: </label>
+    <input type="number" name="vel" id="ivel" >
+    <input type="button" value="Verificar" onclick="Calcular()">
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function Calcular() {
+            var valor = Number(document.getElementById('ivel').value)
+            var res = document.getElementById('resultado')
+            if (valor >= 60) {
+                res.innerHTML = `<p>Você está com excesso de velocidade</p>`
+            }
+            switch(valor+10) {
+                case 60:
+                    res.innerHTML += `<p>Velocidade somada deu 60</p>`
+                    break
+                case 70:
+                    res.innerHTML += `<p>Velocidade somada deu 70</p>`
+                    break
+                case 80:
+                    res.innerHTML += `<p>Velocidade somada deu 80</p>`
+                    break
+                default:
+                    res.innerHTML += `<p>Nenhum dos valores pré-estabelecidos</p>`
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

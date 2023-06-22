@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <p id="inicio" >Comandos em Javascript</p>
+    <p>Primeiros passos</p>
+    <div id="botao" onclick="clicou()" onmouseout="saiu()">Botão</div>
+
+    <script>
+        window.alert('Mensagem de alerta')
+        window.confirm('Mnesagem de confirmação')
+
+        var n1 = Number.parseInt(window.prompt('Primeiro valor'))
+        var n2 = Number(window.prompt('Segundo valor'))
+        var s = String(n1 + n2)
+        window.alert('A soma é ' + s) 
+        window.alert(`A soma é ${s}`)
+
+        var valor = window.document.getElementsByTagName('p')[0]
+        document.write(valor.innerHTML)
+        valor.style.color = 'blue'
+        var valor = window.document.querySelector('p#inicio')
+        document.write(valor.innerText)
+
+        var a = window.document.getElementById('botao')
+        a.addEventListener('click', clicou)
+        a.addEventListener('mouseout', saiu)
+        function clicou() {
+            a.innerHTML = 'Clicou'
+        }
+        function saiu() {
+            a.innerHTML = 'Saiu da Tag'
+        }
+    </script>
+</body>
+</html>
